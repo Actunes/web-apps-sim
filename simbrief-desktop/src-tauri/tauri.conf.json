@@ -13,9 +13,10 @@
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "simbrief-desktop",
-        "width": 800,
-        "height": 600
+        "title": "Simbrief Dispatch",
+        "width": 1200,
+        "height": 900,
+        "url": "https://dispatch.simbrief.com/home"
       }
     ],
     "security": {

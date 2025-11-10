@@ -7,7 +7,6 @@ use tauri_plugin_opener::init;
 
 fn main() {
   tauri::Builder::default()
-    .plugin(init())
     .plugin(tauri_plugin-opener::init())
     .run(tauri::generate_context!())
     .expect("error while running tauri application");

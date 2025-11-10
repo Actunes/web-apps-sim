@@ -1,31 +1,14 @@
-// Prevents additional console window on Windows in release, DO NOT REMOVE!!
-#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+#![cfg_attr(
+  all(not(debug_assertions), target_os = "windows"),
+  windows_subsystem = "windows"
+)]
 
-use tauri::Manager;
-use tauri::shell::open;
-use url::Url;
+use tauri_plugin_opener::init;
 
 fn main() {
   tauri::Builder::default()
-    .setup(|app| {
-      
-      let app_handle = app.handle(); 
-      
-      let window = app_handle.get_window("main").unwrap();
-
-      window.set_navigation_handler(move |url| {
-        let url = Url::parse(&url).unwrap();
-
-        if url.host_str() == Some("dispatch.simbrief.com") {
-          return true; 
-        } else {
-          open(&app_handle, url.as_str(), None).unwrap();
-          return false; 
-        }
-      });
-
-      Ok(())
-    })
+    .plugin(init())
+    
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
 }

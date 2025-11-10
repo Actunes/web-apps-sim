@@ -8,22 +8,6 @@
   "permissions": [
     "core:default",
     "opener:default",
-    {
-      "identifier": "opener:allow-open-url",
-      "allow": [
-        {
-          "url": "https://dispatch.simbrief.com/home"
-        },
-        {
-          "url": "custom:*"
-        },
-        {
-          "url": "https://*"
-        },
-        {
-          "url": "http://*"
-        }
-      ]
-    }
+    "opener:allow-default-urls"
   ]
 }

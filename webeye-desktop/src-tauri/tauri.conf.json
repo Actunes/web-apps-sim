@@ -13,9 +13,10 @@
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "webeye-desktop",
-        "width": 800,
-        "height": 600
+        "title": "IVAO Webeye",
+        "width": 1200,
+        "height": 900,
+        "url": "https://webeye.ivao.aero/"
       }
     ],
     "security": {
